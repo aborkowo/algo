@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+ /* border: 2px solid black;
+  margin-left: 10px;
+  */
+}
+tr, {
+  /* border: 1px solid black;*/
+  text-align: left;
+  padding: 8px;
+  background-color: #2196F3;
+}
+
+td {
+  background-color: #2196F3;
+}
+
+th, td {
+  /* border: 1px solid black; */
+  width: 50px
+
+}
+.pivot {
+	background-color: lightblue;
+}
+
+.iter {
+	background-color: orange;
+
+}
+
+.smaller {
+	background-color: grey;
+
+}
+
+
+.clear {
+	background-color: white;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Bordered Table</h2>
+<p>Use the CSS border property to add a border to the table.</p>
+<p>
+<table style = "width:20%">
+<tr>
+	<td>  &lt;p </td>
+    <td>  p </td>
+    <td>  &gt;p </td>
+    
+</tr>
+</table>
+<p>
+<br/>
+<p>
+
+<p>
+<br/>
+<p>
+
+
+<table>
+<p> iteration i=1 , next smaller index j = 1</p>
+<tr class="clear">
+	<th class="pivot"> pivot </th>
+    <th class="iter"> i =1 </th>
+    <th>   </th>
+    <th>   </th>
+    <th>   </th>
+    <th>   </th>
+</tr>
+<tr>
+	<td class="pivot">  5 </td>
+    <td class="iter">  4 </td>
+    <td>  6 </td>
+    <td>  7 </td>
+    <td>  1 </td>
+    <td>  2 </td>
+</tr>
+<tr class="clear">
+	<th class="pivot">   </th>
+    <th class="smaller">  j = 1</th>
+    <th>   </th>
+    <th>   </th>
+    <th>   </th>
+    <th>   </th>
+</tr>
+
+</table>
+
+<br/>
+
+<table>
+<p> iteration i=2 , next smaller index j = 2</p>
+<tr class="clear">
+	<th class="pivot"> pivot </th>
+	<th>   </th>
+	<th class="iter"> i = 2 </th>
+    
+    <th>   </th>
+    <th>   </th>
+    <th>   </th>
+</tr>
+<tr>
+	<td class="pivot">  5 </td>
+    <td  class="pivot">  4 </td>
+    <td class="iter">  6 </td>
+	<td>  7 </td>
+    <td>  1 </td>
+    <td>  2 </td>
+</tr>
+<tr class="clear">
+	<th class="pivot">   </th>
+    <th>   </th>
+    <th class="smaller">  j = 2</th>
+	<th>   </th>
+    <th>   </th>
+    <th>   </th>
+</tr>
+
+</table>
+
+<br/>
+
+
+<table>
+<p> iteration i=3 , next smaller index j = 2</p>
+<tr class="clear">
+	<th class="pivot"> pivot </th>
+	<th>   </th>
+    <th>   </th>
+	<th class="iter"> i = 3 </th>    
+    <th>   </th>
+    <th>   </th>
+</tr>
+<tr>
+	<td class="pivot">  5 </td>
+    <td  class="pivot">  4 </td>
+	<td class="smaller">  6 </td>
+    <td class="iter">  7 </td>
+	<td>  1 </td>
+  <td>  2 </td>
+</tr>
+<tr class="clear">
+	<th class="pivot">   </th>
+    <th>   </th>
+    <th class="smaller">  j = 2</th>
+	<th>   </th>
+    <th>   </th>
+    <th>   </th>
+</tr>
+
+</table>
+
+<br/>
+
+
+<table>
+<p> iteration i=4 , next smaller index j = 2</p>
+<tr class="clear">
+	<th class="pivot"> pivot </th>
+	<th>   </th>
+    <th>   </th>
+    <th>   </th>
+	<th class="iter"> i = 4 </th>    
+  <th>   </th>
+</tr>
+<tr>
+	<td class="pivot">  5 </td>
+    <td class="pivot">  4 </td>
+	<td class="smaller">  6 </td>
+	<td>  7 </td>
+	<td class="iter">  1 </td>
+  <td>  2 </td>
+</tr>
+<tr class="clear">
+	<th class="pivot">   </th>
+    <th>   </th>
+    <th class="smaller">  j = 2</th>
+	<th>   </th>
+    <th>   </th>
+      <th>   </th>
+</tr>
+
+</table>
+
+<br/>
+
+<table style="margin:50px">
+<p> iteration i=4 , swap next smaller index j = 3</p>
+<tr class="clear">
+	<th class="pivot"> pivot </th>
+	<th>   </th>
+    <th>   </th>
+    <th>   </th>
+	<th class="iter"> i = 4 </th>    
+    <th>   </th>
+
+</tr>
+<tr>
+	<td class="pivot">  5 </td>
+    <td class="pivot">  4 </td>
+	<td class="pivot">  1 </td>
+<td class="smaller">  7 </td>
+	<td  class="iter">  6 </td>
+<td>  2 </td>
+</tr>
+
+<tr class="clear">
+	<th class="pivot">   </th>
+    <th>   </th>
+	<th>   </th>
+	<th class="smaller">  j = 3</th>
+    <th>   </th>
+</tr>
+
+<p> iteration i=5 , next smaller index j = 2</p>
+<tr class="clear">
+  <th class="pivot"> pivot </th>
+  <th>   </th>
+    <th>   </th>
+    <th>   </th>
+  <th>   </th>
+  <th class="iter"> i = 5 </th>    
+  
+</tr>
+<tr>
+  <td class="pivot">  5 </td>
+    <td class="pivot">  4 </td>
+  <td >  1 </td>
+  <td class="smaller">  7 </td>
+  <td>  6 </td>
+  <td class="iter">  2 </td>
+  
+</tr>
+<tr class="clear">
+  <th class="pivot">   </th>
+    <th>   </th>
+  <th>   </th>
+    <th class="smaller">  j = 3</th>
+    <th>   </th>
+      <th>   </th>
+</tr>
+
+</table>
+
+<br/>
+
+<table style="margin:50px">
+<p> iteration i=5 , swap next smaller index j = 4</p>
+<tr class="clear">
+  <th class="pivot"> pivot </th>
+  <th>   </th>
+    <th>   </th>
+    <th>   </th>
+    <th>   </th>
+  <th class="iter"> i = 5 </th>    
+    
+
+</tr>
+<tr>
+  <td class="pivot">  5 </td>
+    <td class="pivot">  4 </td>
+  <td class="pivot">  1 </td>
+<td >  2 </td>
+  <td  class="smaller">  6 </td>
+<td class="iter">  7 </td>
+</tr>
+
+<tr class="clear">
+  <th class="pivot">   </th>
+    <th>   </th>
+  <th>   </th>
+    <th>   </th>
+  <th class="smaller">  j = 4</th>
+  
+</tr>
+
+
+</table>
+
+<br/>
+
+<table>
+<p> final stage - swap pivot element with last smaller </p>
+<tr class="clear">
+	<th>   </th>
+    <th>   </th>
+	<th class="pivot"> pivot </th>
+	<th>   </th>
+	<th>   </th>    
+  <th>   </th>    
+</tr>
+
+<tr>
+	<td class="pivot">  1 </td>
+    <td class="pivot">  4 </td>
+	<td class="pivot">  5 </td>
+	<td >  7 </td>
+	<td  >  6 </td>
+  <td  >  2 </td>
+
+</tr>
+<tr class="clear">
+    <th>   </th>
+	<th>   </th>
+	<th class="pivot">   </th>
+	<th class="smaller">  j = 3</th>
+    <th>   </th>
+    <th>   </th>
+</tr>
+
+
+</table>
+
+<br/>
+
+
+<br/>
+
+ 
+ <table margin="auto">
+    <tr>
+      <td>  &lt;p </td>
+      <td>  p </td>
+      <td>  &gt;p </td>    
+    </tr>
+  </table>
+
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
+  </tr>
+</table>
+
+</body>
+</html>
