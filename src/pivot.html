@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+ /* border: 2px solid black;
+  margin-left: 10px;
+  */
+}
+tr, {
+  /* border: 1px solid black;*/
+  text-align: left;
+  padding: 8px;
+  /*background-color: #2196F3;*/
+}
+
+td {
+  /*background-color: #2196F3;*/
+}
+
+th, td {
+  /* border: 1px solid black; */
+  width: 50px
+
+}
+.pivot {
+	background-color: lightblue;
+}
+
+.iter {
+	background-color: orange;
+
+}
+
+.next {
+	background-color: grey;
+
+}
+
+.swap {
+	background-color: yellow;
+
+}
+
+.left {
+	background-color: blue;
+
+}
+.clear {
+	background-color: white;
+}
+
+</style>
+</head>
+<body>
+<table>
+<p>iteration: 1 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="iter" > 1 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class=""> 100 </td>
+<td class=""> 20 </td>
+<td class=""> 4 </td>
+<td class=""> 3 </td>
+<td class=""> 2 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="next" > 1 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 2 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 2 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class=""> 100 </td>
+<td class=""> 20 </td>
+<td class=""> 4 </td>
+<td class=""> 3 </td>
+<td class=""> 2 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="next" > 1 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 3 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 3 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="swap"> 100 </td>
+<td class=""> 20 </td>
+<td class="swap"> 4 </td>
+<td class=""> 3 </td>
+<td class=""> 2 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class=""> 20 </td>
+<td class=""> 100 </td>
+<td class=""> 3 </td>
+<td class=""> 2 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 2 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 4 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 4 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="swap"> 20 </td>
+<td class=""> 100 </td>
+<td class="swap"> 3 </td>
+<td class=""> 2 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class=""> 100 </td>
+<td class=""> 20 </td>
+<td class=""> 2 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 3 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 5 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 5 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="swap"> 100 </td>
+<td class=""> 20 </td>
+<td class="swap"> 2 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class=""> 20 </td>
+<td class=""> 100 </td>
+<td class=""> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 4 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 6 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 6 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="swap"> 20 </td>
+<td class=""> 100 </td>
+<td class="swap"> 5 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class=""> 100 </td>
+<td class=""> 20 </td>
+<td class=""> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 5 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 7 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 7 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="swap"> 100 </td>
+<td class=""> 20 </td>
+<td class="swap"> 5 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class=""> 20 </td>
+<td class=""> 100 </td>
+<td class=""> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 6 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 8 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 8 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class="swap"> 20 </td>
+<td class=""> 100 </td>
+<td class="swap"> 3 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class="left"> 3 </td>
+<td class=""> 100 </td>
+<td class=""> 20 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 7 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 9 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 9 </td>
+<td class="" >  </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class="left"> 3 </td>
+<td class=""> 100 </td>
+<td class=""> 20 </td>
+<td class=""> 15 </td>
+<td class=""> 6 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 7 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>iteration: 10 </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 10 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class="left"> 3 </td>
+<td class="swap"> 100 </td>
+<td class=""> 20 </td>
+<td class=""> 15 </td>
+<td class="swap"> 6 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class="left"> 3 </td>
+<td class="left"> 6 </td>
+<td class=""> 20 </td>
+<td class=""> 15 </td>
+<td class=""> 100 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 8 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+<p>finally </p><table>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="iter" > 10 </td>
+</tr>
+<tr>
+<td class="pivot"> 11 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class="left"> 3 </td>
+<td class="swap"> 6 </td>
+<td class=""> 20 </td>
+<td class=""> 15 </td>
+<td class=""> 100 </td>
+</tr>
+<tr>
+<td class="left"> 6 </td>
+<td class="left"> 4 </td>
+<td class="left"> 3 </td>
+<td class="left"> 2 </td>
+<td class="left"> 5 </td>
+<td class="left"> 5 </td>
+<td class="left"> 3 </td>
+<td class="pivot"> 11 </td>
+<td class=""> 20 </td>
+<td class=""> 15 </td>
+<td class=""> 100 </td>
+</tr>
+<tr>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="" >  </td>
+<td class="next" > 8 </td>
+<td class="" >  </td>
+<td class="" >  </td>
+</tr>
+</table>
+
+</table>
+
+</body>
+</html>
+
