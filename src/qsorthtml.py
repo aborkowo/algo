@@ -1,4 +1,3 @@
-
 # numbers row, highlight current element
 # highlight pivot element
 
@@ -9,7 +8,7 @@ def iter_row(A, ite):
     for i,a in enumerate(A):
         cl = '' if (i != ite) else 'iter'
         it = '' if (i != ite) else i
-        s += f'<td class=\"{cl}" > {it} </td>\n'
+        s += '<td class=\"{cl}" > {it} </td>\n'
     s+= '</tr>\n'
     return s
 
